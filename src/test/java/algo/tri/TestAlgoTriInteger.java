@@ -31,4 +31,24 @@ public class TestAlgoTriInteger extends TestAlgo<Integer>{
 		System.out.println(vMessage);
 		assertTrue(isEqualCollection(vListeTrieAttendu, vCollectionTrieSorti));
 	}
+	
+	@Test
+	public void testAlgoTriDecroissant()
+	{
+		//Données d'entrées et attendu
+		List<Integer> vListeATrier = new ArrayList<>(Arrays.asList(7,-78,150,78,54,10,-25,2,-3,0));
+		List<Integer> vListeTrieAttendu = new ArrayList<>(Arrays.asList(150,78,54,10,7,2,0,-3,-25,-78));
+		
+		//Creation du résolveur d'algo
+		AlgoTri<Integer> vAlgoTri = new AlgoTriInteger(TypeTri.DECROISSANT);
+		
+		//Données sorties
+		Collection<Integer> vCollectionTrieSorti = vAlgoTri.trier(vListeATrier);
+		
+		//Création du message output
+		String vMessage = resultatAlgo("Algo de tri Integer decroissant", vListeATrier, vListeTrieAttendu, vCollectionTrieSorti);
+		
+		System.out.println(vMessage);
+		assertTrue(isEqualCollection(vListeTrieAttendu, vCollectionTrieSorti));
+	}
 }
